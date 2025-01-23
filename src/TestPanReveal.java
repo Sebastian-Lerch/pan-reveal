@@ -44,6 +44,10 @@ public class TestPanReveal {
                 comparisonData = getRequest(BALANCE_API_KEY, GET_REVEAL_ENDPOINT);
             }
             catch (IOException e){
+                //When there is an error in getting the data from the GET /reveal endpoint we end up here
+                //This can happen if the BCL API credential does not have the PCI role enabled (which can only be
+                //enabled for PCI Compliant card partners in LIVE. In TEST we can enable it, however this would then be
+                //a deviation from the live environment.
                 comparisonData = "Error";
             }
             //Step 1: Get public key
@@ -103,11 +107,14 @@ public class TestPanReveal {
             JSONObject jsonPaymentInstrumentData = new JSONObject(paymentInstrumentData);
 // Compare result
             if(comparisonData.equals("Error")){
+                //When we could not retrieve the data from the GET /reveal endpoint in STEP 0 we can only do a sanity check
+                //which should be good enough
                 Assertions.assertTrue(jsonPaymentInstrumentData.has("cvc"));
                 Assertions.assertTrue(jsonPaymentInstrumentData.has("pan"));
                 Assertions.assertTrue(jsonPaymentInstrumentData.has("expiration"));
             }
             else {
+                //We have the real values and can compare the result
                 JSONObject jsonComparisonData = new JSONObject(comparisonData);
                 Assertions.assertTrue(jsonComparisonData.similar(jsonPaymentInstrumentData));
             }
