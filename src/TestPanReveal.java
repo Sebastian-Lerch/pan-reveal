@@ -33,8 +33,8 @@ public class TestPanReveal {
          */
         final String AES_CIPHER_SPEC = "AES/CBC/PKCS5Padding";
         final String RSA_CIPHER_SPEC = "RSA/NONE/PKCS1Padding";
-        final String PUBLIC_KEY_ENDPOINT = "https://balanceplatform-api-test.adyen.com/bcl/v1/publicKey?purpose=panReveal";
-        final String REVEAL_ENDPOINT = "https://balanceplatform-api-test.adyen.com/bcl/v1/paymentInstruments/reveal";
+        final String PUBLIC_KEY_ENDPOINT = "https://balanceplatform-api-test.adyen.com/bcl/v2/publicKey?purpose=panReveal";
+        final String REVEAL_ENDPOINT = "https://balanceplatform-api-test.adyen.com/bcl/v2/paymentInstruments/reveal";
         final String GET_REVEAL_ENDPOINT = "https://balanceplatform-api-test.adyen.com/bcl/v2/paymentInstruments/" + PAYMENT_INSTRUMENT_ID +"/reveal";
         try {
             Security.addProvider(new BouncyCastleProvider());
