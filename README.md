@@ -1,5 +1,5 @@
 # pan-reveal
-This repository can be used to test the end to end flow of the PAN reveal process of an Adyen Issuing integration. The full process is described in the [Adyen docs]([url](https://docs.adyen.com/issuing/manage-card-data/reveal-card-details/)).
+This repository can be used to test the end to end flow of the PAN reveal process of an Adyen Issuing integration. The full process is described in the [Adyen docs](https://docs.adyen.com/issuing/manage-card-data/reveal-card-details/).
 
 ## Usage
 There are two ways you can use this repo. 
