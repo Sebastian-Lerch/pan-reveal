@@ -28,8 +28,8 @@ public class TestPinReveal {
         /*
         Parameters - edit only the following
          */
-        final String PAYMENT_INSTRUMENT_ID = "<YOUR Payment instrument id here>";
-        final String BALANCE_API_KEY = "<YOUR API KEY here>";
+        final String PAYMENT_INSTRUMENT_ID = "<YOUR_PAYMENT_INSTRUMENT_ID>";
+        final String BALANCE_API_KEY = "<YOUR_API_KEY_HERE>";
         /*
         End Parameters
          */
@@ -120,12 +120,12 @@ public class TestPinReveal {
 
             //4.5 extract the PIN
             if (decryptedHex.length() >= 4) {
-                String extractedDigits = decryptedHex.substring(1, 5);
+                String extractedDigits = decryptedHex.substring(2, 6);
                 System.out.println("Extracted Digits: " + extractedDigits);
 
                 Assertions.assertTrue(extractedDigits.matches("\\d{4}"), "Extracted value is not a 4-digit number");
             } else {
-                System.out.println("Decrypted Hex String is too short to extract digits 1-4.");
+                System.out.println("Decrypted Hex String is too short to extract digits 2-5.");
             }
 
         } catch (NoSuchAlgorithmException e) {
@@ -185,8 +185,8 @@ public class TestPinReveal {
 
 //Step 3: Request encrypted data
             //let's proceed with some already dummy data
-            String encryptedData = "2F93F6F3D6ECA6192F71BBA3D99BD825"; //Value to be replaced by service
-            String token = "8661218353725212";
+            String encryptedData = "483f4493dc346697b6b11685d3a473fb"; //Value to be replaced by service
+            String token = "8374188662676926";
 
 //Step 4.1: Decrypt encrypted data
             Cipher aesCipher = Cipher.getInstance(AES_CIPHER_SPEC);
@@ -219,12 +219,12 @@ public class TestPinReveal {
 
             //4.5 extract the PIN
             if (decryptedHex.length() >= 4) {
-                String extractedDigits = decryptedHex.substring(1, 5);
+                String extractedDigits = decryptedHex.substring(2, 6);
                 System.out.println("Extracted Digits: " + extractedDigits);
 
                 Assertions.assertTrue(extractedDigits.matches("\\d{4}"), "Extracted value is not a 4-digit number");
             } else {
-                System.out.println("Decrypted Hex String is too short to extract digits 1-4.");
+                System.out.println("Decrypted Hex String is too short to extract digits 2-5.");
             }
 
         } catch (NoSuchAlgorithmException e) {

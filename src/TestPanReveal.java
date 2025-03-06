@@ -26,8 +26,8 @@ public class TestPanReveal {
         /*
         Parameters - edit only the following
          */
-        final String PAYMENT_INSTRUMENT_ID = "<your payment instrument id here>";
-        final String BALANCE_API_KEY = "<your BCL API key here>";
+        final String PAYMENT_INSTRUMENT_ID = "<YOUR_PAYMENT_INSTRUMENT_ID>";
+        final String BALANCE_API_KEY = "<YOUR_API_KEY_HERE>";
         /*
         End Parameters
          */
